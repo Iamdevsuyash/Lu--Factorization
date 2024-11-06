@@ -13,7 +13,7 @@ document.getElementById('btn').onclick = function() {
     const col_value = col.value;
 
     for (let i = 1; i <= row_value; i++) {
-        let rowData = []; // Initialize an array for the current row
+        let rowData = []; 
         
         const cur_row = document.createElement('div');
         cur_row.classList.add('row');
@@ -29,14 +29,14 @@ document.getElementById('btn').onclick = function() {
             cell.appendChild(cell_input);
             cur_row.appendChild(cell);
             
-            rowData.push(cell_input); // Store input element reference in row array
+            rowData.push(cell_input); 
         }
 
         matrix.appendChild(cur_row);
         matrixData.push(rowData); // Add the row to the matrix
     }
 
-    // console.log(matrixData); // Log the matrix data (this will be an array of input elements)
+    // console.log(matrixData);
 };
 
 // Function to extract the numeric values from matrixData into a 2D array
@@ -150,24 +150,23 @@ function createUMatrixStepwise() {
 function displayMatrix(matrix, title) {
     const matrixDisplayContainer = document.getElementById('matrixDisplay');
 
-    // Create a title element
     const matrixTitle = document.createElement('h3');
     matrixTitle.textContent = title;
     matrixDisplayContainer.appendChild(matrixTitle);
 
-    // Display the matrix
+
     for (let i = 0; i < matrix.length; i++) {
         const cur_row = document.createElement('div');
         cur_row.classList.add('row');
         
         for (let j = 0; j < matrix[i].length; j++) {
             const cell = document.createElement('li');
-            cell.textContent = matrix[i][j].toFixed(2); // Set cell text to matrix value, rounded to 2 decimal places
+            cell.textContent = matrix[i][j].toFixed(2); 
             
             cur_row.appendChild(cell);
         }
 
-        matrixDisplayContainer.appendChild(cur_row); // Append the row to the matrix container
+        matrixDisplayContainer.appendChild(cur_row); 
     }
 }
 
